@@ -1,23 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-foundy-50: #f7f6fe;
-  --color-foundy-100: #eeeafc;
-  --color-foundy-200: #e2d8fb;
-  --color-foundy-300: #cebef0;
-  --color-foundy-400: #b095e4;
-  --color-foundy-500: #9370d6;
-  --color-foundy-600: #7c52c2;
-  --color-foundy-700: #6a40aa;
-  --color-foundy-800: #59388b;
-  --color-foundy-900: #4a2f72;
-  --color-foundy-950: #2d184b;
-
-  --color-surface: #faf9fb;
-  --color-foreground: #0c0d0f;
-  --color-muted: #6e6e6e;
-  --color-border: #e5e4e9;
-  --color-dark-surface: #121216;
+  --color-foundy-purple: #6B46C1;
+  --color-foundy-purple-light: #7C5CD1;
+  --color-foundy-heading: #1A1A1A;
+  --color-foundy-body: #4A4A4A;
+  --color-foundy-border: #E0E0E0;
+  --color-foundy-dark: #1A1A1A;
+  --color-foundy-bg: #FFFFFF;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -30,9 +21,9 @@
   }
 
   body {
-    color: var(--color-foreground);
-    background: var(--color-surface);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--color-foundy-heading);
+    background: var(--color-foundy-bg);
+    font-family: var(--font-sans);
   }
 }
 

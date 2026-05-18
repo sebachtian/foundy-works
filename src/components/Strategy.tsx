@@ -1,32 +1,89 @@
 const OFFERINGS = [
   {
-    title: "Foundy Strategy",
+    title: "Consulting",
     description:
-      "Define problems and design systems before execution. We help you map the landscape, identify what truly matters, and build a roadmap that aligns with your why.",
-    tag: "Consulting",
+      "We start with the question that matters most — why. Our strategy consulting helps you map the landscape, identify what truly matters, and design systems that align with your purpose before a single line of code is written.",
     href: "#",
+    icon: "consulting",
   },
   {
     title: "Foundy MedCore",
     description:
-      "Healthcare systems for hospitals and clinics, integrated with BPJS and modern record-keeping. Built for Indonesian healthcare infrastructure.",
-    tag: "Product",
+      "Healthcare systems for hospitals and clinics, integrated with BPJS and modern record-keeping. Built for Indonesian healthcare infrastructure that needs reliability, compliance, and scale.",
     href: "#",
+    icon: "healthcare",
   },
 ];
 
+function SectionLabel({ text }: { text: string }) {
+  return (
+    <div className="inline-flex items-center gap-2.5 mb-6">
+      <span className="w-2.5 h-2.5 bg-foundy-purple rounded-sm shrink-0" />
+      <span className="text-xs font-medium uppercase tracking-[0.2em] text-foundy-purple">
+        {text}
+      </span>
+    </div>
+  );
+}
+
+function IconConsulting() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <path
+        d="M5 23V11L14 4L23 11V23H18V16H10V23H5Z"
+        stroke="#6B46C1"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function IconHealthcare() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <path
+        d="M12 12H16M14 10V18"
+        stroke="#6B46C1"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <rect
+        x="3"
+        y="3"
+        width="22"
+        height="22"
+        rx="5"
+        stroke="#6B46C1"
+        strokeWidth="2"
+      />
+      <path
+        d="M10 21H18"
+        stroke="#6B46C1"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+const icons: Record<string, React.ReactNode> = {
+  consulting: <IconConsulting />,
+  healthcare: <IconHealthcare />,
+};
+
 export function Strategy() {
   return (
-    <section id="strategy" className="py-20 md:py-28">
+    <section id="strategy" className="py-20 md:py-28 bg-white">
       <div className="container">
-        <div className="max-w-2xl mb-16">
-          <span className="text-xs font-semibold uppercase tracking-widest text-foundy-500">
-            What Foundy Is
-          </span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+        <SectionLabel text="What Foundy Is" />
+
+        <div className="max-w-2xl mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foundy-heading">
             From Why to System
           </h2>
-          <p className="mt-4 text-muted leading-relaxed">
+          <p className="mt-4 text-foundy-body text-lg leading-relaxed">
             We don&apos;t just build. We start with the question that matters most
             &mdash; <em>why</em>. Every product, every system, every decision flows
             from that foundation.
@@ -38,20 +95,24 @@ export function Strategy() {
             <a
               key={item.title}
               href={item.href}
-              className="group rounded-2xl border border-border bg-white p-8 hover:border-foundy-200 hover:shadow-lg hover:shadow-foundy-100/50 transition-all"
+              className="group rounded-xl border border-foundy-border bg-white p-8 shadow-sm hover:border-foundy-purple/30 hover:shadow-md transition-all"
             >
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-foundy-100 text-xs font-semibold text-foundy-700 uppercase tracking-wider">
-                {item.tag}
-              </span>
-              <h3 className="mt-4 text-xl font-semibold text-foreground group-hover:text-foundy-600 transition-colors">
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-xl border-2 border-foundy-purple/20 flex items-center justify-center mb-5 group-hover:border-foundy-purple/40 transition-colors">
+                {icons[item.icon]}
+              </div>
+
+              <h3 className="text-2xl font-bold text-foundy-heading">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm text-muted leading-relaxed">
+              <p className="mt-3 text-foundy-body leading-relaxed">
                 {item.description}
               </p>
-              <div className="mt-6 flex items-center gap-1 text-sm font-medium text-foundy-600 group-hover:gap-2 transition-all">
+              <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foundy-purple group-hover:gap-2.5 transition-all">
                 Learn more
-                <span className="text-lg leading-none">&rarr;</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </div>
             </a>
           ))}
