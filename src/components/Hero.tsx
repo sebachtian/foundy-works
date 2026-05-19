@@ -71,19 +71,26 @@ function HeroGraphic() {
         />
         <polyline points="605,385 625,400 605,415" stroke="#D6D6D6" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
-        {/* Purple path (on top) */}
-        <line x1="40" y1="240" x2="220" y2="240" stroke="#7C4DFF" strokeWidth="4" strokeLinecap="round" />
+        {/* Purple incoming line */}
+        <line x1="40" y1="240" x2="225" y2="240" stroke="#7C4DFF" strokeWidth="4" strokeLinecap="round" />
+
+        {/* Left dot */}
         <circle cx="40" cy="240" r="8" fill="#7C4DFF" />
 
+        {/* Center circle */}
         <circle cx="280" cy="240" r="55" stroke="#7C4DFF" strokeWidth="4" fill="none" />
 
-        <line x1="255" y1="240" x2="300" y2="240" stroke="#7C4DFF" strokeWidth="4" strokeLinecap="round" />
-        <polyline points="285,225 300,240 285,255" stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        {/* Inner arrow */}
+        <line x1="255" y1="240" x2="292" y2="240" stroke="#7C4DFF" strokeWidth="4" strokeLinecap="round" />
+        <polyline points="278,226 292,240 278,254" stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
+        {/* Outer purple path */}
         <path
-          d="M 220 240 L 335 240 C 360 240, 370 240, 390 220 L 500 110 C 515 95, 525 80, 540 80 L 620 80"
+          d="M 335 240 C 360 240, 370 240, 390 220 L 500 110 C 515 95, 525 80, 540 80 L 620 80"
           stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round"
         />
+
+        {/* Top arrow */}
         <polyline points="605,65 625,80 605,95" stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
