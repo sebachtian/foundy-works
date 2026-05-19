@@ -35,9 +35,9 @@ export function Hero() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Process Flow Graphic */}
+          {/* RIGHT COLUMN - SVG Graphic */}
           <div className="flex justify-center md:justify-end">
-            <ProcessFlowGraphic />
+            <HeroGraphic />
           </div>
         </div>
       </div>
@@ -53,43 +53,38 @@ function ArrowUpRight() {
   );
 }
 
-function ProcessFlowGraphic() {
+function HeroGraphic() {
   return (
-    <div className="relative w-full max-w-[460px] aspect-square">
-      <svg viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        {/* === SOURCE LINE (from left to center) === */}
-        <line x1="40" y1="230" x2="185" y2="230" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" />
-        {/* Arrowhead on source line */}
-        <polygon points="175,225 190,230 175,235" fill="#6B46C1" />
+    <div className="relative w-full max-w-[460px] aspect-[656/492]">
+      <svg viewBox="0 0 656 492" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        {/* Background circles */}
+        <circle cx="280" cy="240" r="120" stroke="#EFEFEF" strokeWidth="2" fill="none" />
+        <circle cx="280" cy="240" r="70" stroke="#EFEFEF" strokeWidth="2" fill="none" />
 
-        {/* === CENTER PROCESS LOGO (circle inside circle, grey) === */}
-        <circle cx="230" cy="230" r="50" stroke="#E2E8F0" strokeWidth="3" />
-        <circle cx="230" cy="230" r="32" stroke="#E2E8F0" strokeWidth="2.5" />
-        {/* Inner dot */}
-        <circle cx="230" cy="230" r="6" fill="#6B46C1" />
+        {/* Gray lines */}
+        <line x1="335" y1="240" x2="625" y2="240" stroke="#D6D6D6" strokeWidth="3" strokeLinecap="round" />
+        <polyline points="610,225 625,240 610,255" stroke="#D6D6D6" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
-        {/* === BRANCH 1 (top-right, HIGHLIGHTED - purple) === */}
-        <line x1="275" y1="200" x2="390" y2="120" stroke="#6B46C1" strokeWidth="3" strokeLinecap="round" />
-        <polygon points="380,128 392,118 384,112" fill="#6B46C1" />
-        {/* Node at end */}
-        <circle cx="392" cy="118" r="7" fill="#6B46C1" />
-        {/* Highlight glow ring */}
-        <circle cx="392" cy="118" r="14" stroke="#6B46C1" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.4" />
+        <path
+          d="M 335 240 C 360 240, 370 240, 390 260 L 500 370 C 515 385, 525 400, 540 400 L 620 400"
+          stroke="#D6D6D6" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"
+        />
+        <polyline points="605,385 625,400 605,415" stroke="#D6D6D6" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
-        {/* === BRANCH 2 (middle-right, dimmed) === */}
-        <line x1="280" y1="230" x2="400" y2="230" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
-        <polygon points="388,225 402,230 388,235" fill="#E2E8F0" />
-        <circle cx="402" cy="230" r="5" fill="#E2E8F0" />
+        {/* Purple path (on top) */}
+        <line x1="40" y1="240" x2="220" y2="240" stroke="#7C4DFF" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="40" cy="240" r="8" fill="#7C4DFF" />
 
-        {/* === BRANCH 3 (bottom-right, dimmed) === */}
-        <line x1="275" y1="260" x2="390" y2="340" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
-        <polygon points="378,335 392,342 382,348" fill="#E2E8F0" />
-        <circle cx="392" cy="342" r="5" fill="#E2E8F0" />
+        <circle cx="280" cy="240" r="55" stroke="#7C4DFF" strokeWidth="4" fill="none" />
 
-        {/* === DECORATIVE DOTS === */}
-        <circle cx="100" cy="150" r="2.5" fill="#E2E8F0" />
-        <circle cx="160" cy="320" r="2.5" fill="#E2E8F0" />
-        <circle cx="340" cy="380" r="2" fill="#E2E8F0" />
+        <line x1="255" y1="240" x2="300" y2="240" stroke="#7C4DFF" strokeWidth="4" strokeLinecap="round" />
+        <polyline points="285,225 300,240 285,255" stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+        <path
+          d="M 220 240 L 335 240 C 360 240, 370 240, 390 220 L 500 110 C 515 95, 525 80, 540 80 L 620 80"
+          stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round"
+        />
+        <polyline points="605,65 625,80 605,95" stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   );
