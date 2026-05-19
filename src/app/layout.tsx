@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 
 export const metadata: Metadata = {
   title: "Foundy Works — Find the Why. Build What Matters.",
@@ -33,6 +34,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col antialiased">
         {children}
+        <WhatsAppFloatingButton />
       </body>
     </html>
   );
