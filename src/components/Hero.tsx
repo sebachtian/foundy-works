@@ -35,9 +35,9 @@ export function Hero() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Abstract Graphic */}
+          {/* RIGHT COLUMN - Interconnected Network Graphic */}
           <div className="flex justify-center md:justify-end">
-            <HeroGraphic />
+            <NetworkGraphic />
           </div>
         </div>
       </div>
@@ -53,35 +53,101 @@ function ArrowUpRight() {
   );
 }
 
-function HeroGraphic() {
+function NetworkGraphic() {
   return (
-    <div className="relative w-full max-w-[440px] aspect-square">
-      <svg viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        {/* Central dashed circle */}
-        <circle cx="200" cy="220" r="70" stroke="#6B46C1" strokeWidth="2" strokeDasharray="6 6" />
+    <div className="relative w-full max-w-[480px] aspect-square">
+      <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        {/* Central hub circle - dashed */}
+        <circle cx="240" cy="240" r="60" stroke="#6B46C1" strokeWidth="2" strokeDasharray="6 6" />
 
-        {/* Arrow inside central circle */}
-        <path d="M180 230L200 210L220 230" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M200 210V250" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" />
+        {/* Center arrow */}
+        <path d="M225 245L240 225L255 245" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M240 225V260" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" />
 
-        {/* Purple curved line top-right - with arrow and dot */}
-        <circle cx="280" cy="140" r="4" fill="#6B46C1" />
-        <path d="M280 140C300 160, 320 170, 330 180" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" />
-        {/* Arrowhead at end */}
-        <path d="M325 175L333 183L336 174" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#6B46C1" />
+        {/* ---- NODES (connection points) ---- */}
+        {/* Top node */}
+        <circle cx="240" cy="90" r="6" fill="#6B46C1" />
+        {/* Top-right node */}
+        <circle cx="370" cy="130" r="5" fill="#6B46C1" />
+        {/* Right node */}
+        <circle cx="400" cy="240" r="6" fill="#6B46C1" />
+        {/* Bottom-right node */}
+        <circle cx="370" cy="350" r="5" fill="#6B46C1" />
+        {/* Bottom node */}
+        <circle cx="240" cy="400" r="6" fill="#6B46C1" />
+        {/* Bottom-left node */}
+        <circle cx="110" cy="350" r="5" fill="#6B46C1" />
+        {/* Left node */}
+        <circle cx="80" cy="240" r="6" fill="#6B46C1" />
+        {/* Top-left node */}
+        <circle cx="110" cy="130" r="5" fill="#6B46C1" />
 
-        {/* Gray curved line 1 - middle right */}
-        <path d="M300 240C330 250, 350 260, 360 270" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
-        <path d="M355 265L363 273L366 264" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#E2E8F0" />
+        {/* ---- CONNECTING ARROWS (hub to nodes) ---- */}
+        {/* Center to Top */}
+        <path d="M240 180L240 96" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="235,102 240,90 245,102" fill="#6B46C1" />
 
-        {/* Gray curved line 2 - bottom right */}
-        <path d="M280 320C310 330, 330 340, 340 350" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
-        <path d="M335 345L343 353L346 344" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#E2E8F0" />
+        {/* Center to Top-Right */}
+        <path d="M280 200L362 138" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="362,131 370,132 367,142" fill="#6B46C1" />
 
-        {/* Small decorative dots */}
-        <circle cx="130" cy="120" r="3" fill="#E2E8F0" />
-        <circle cx="350" cy="100" r="3" fill="#E2E8F0" />
-        <circle cx="130" cy="340" r="3" fill="#E2E8F0" />
+        {/* Center to Right */}
+        <path d="M300 240L392 240" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="390,235 402,240 390,245" fill="#6B46C1" />
+
+        {/* Center to Bottom-Right */}
+        <path d="M280 280L362 342" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="362,338 370,348 367,348" fill="#6B46C1" transform="translate(-2,2)" />
+
+        {/* Center to Bottom */}
+        <path d="M240 300L240 392" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="235,390 240,402 245,390" fill="#6B46C1" />
+
+        {/* Center to Bottom-Left */}
+        <path d="M200 280L118 342" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="118,338 110,348 113,348" fill="#E2E8F0" transform="translate(2,2)" />
+
+        {/* Center to Left */}
+        <path d="M180 240L88 240" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="90,235 78,240 90,245" fill="#E2E8F0" />
+
+        {/* Center to Top-Left */}
+        <path d="M200 200L118 138" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="118,131 110,132 113,142" fill="#E2E8F0" />
+
+        {/* ---- RECONNECTING ARCS (node to node, forming a network) ---- */}
+        {/* Top to Top-Right */}
+        <path d="M246 90C280 80, 320 100, 365 132" stroke="#6B46C1" strokeWidth="1.5" strokeDasharray="4 3" strokeLinecap="round" opacity="0.6" />
+        <polygon points="365,128 373,136 370,136" fill="#6B46C1" opacity="0.6" transform="translate(0,4)" />
+
+        {/* Top-Right to Right */}
+        <path d="M376 135C390 160, 395 200, 394 236" stroke="#E2E8F0" strokeWidth="1.5" strokeDasharray="4 3" strokeLinecap="round" />
+        <polygon points="398,234 400,246 390,238" fill="#E2E8F0" />
+
+        {/* Right to Bottom-Right */}
+        <path d="M394 246C390 280, 380 310, 366 344" stroke="#6B46C1" strokeWidth="1.5" strokeDasharray="4 3" strokeLinecap="round" opacity="0.6" />
+        <polygon points="370,344 368,352 362,344" fill="#6B46C1" opacity="0.6" />
+
+        {/* Bottom to Left (crossing through center) */}
+        <path d="M234 394C200 380, 160 360, 116 344" stroke="#E2E8F0" strokeWidth="1.5" strokeDasharray="4 3" strokeLinecap="round" />
+        <polygon points="118,340 108,342 114,348" fill="#E2E8F0" />
+
+        {/* Left to Top-Left */}
+        <path d="M86 234C100 200, 105 170, 115 136" stroke="#6B46C1" strokeWidth="1.5" strokeDasharray="4 3" strokeLinecap="round" opacity="0.6" />
+        <polygon points="111,138 113,128 119,134" fill="#6B46C1" opacity="0.6" />
+
+        {/* Top-Left to Top */}
+        <path d="M116 130C150 100, 190 92, 234 90" stroke="#E2E8F0" strokeWidth="1.5" strokeDasharray="4 3" strokeLinecap="round" />
+        <polygon points="232,86 242,90 232,94" fill="#E2E8F0" />
+
+        {/* ---- OUTER RING (dashed circle connecting all nodes) ---- */}
+        <circle cx="240" cy="240" r="170" stroke="#6B46C1" strokeWidth="1" strokeDasharray="8 12" opacity="0.25" />
+
+        {/* ---- DECORATIVE DOTS ---- */}
+        <circle cx="160" cy="160" r="3" fill="#E2E8F0" />
+        <circle cx="320" cy="160" r="3" fill="#E2E8F0" />
+        <circle cx="320" cy="320" r="3" fill="#E2E8F0" />
+        <circle cx="160" cy="320" r="3" fill="#E2E8F0" />
       </svg>
     </div>
   );

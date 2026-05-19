@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Foundy Works — Find the Why. Build What Matters.",
   description:
     "Foundy helps organizations and individuals define what should be built and why, then turns that clarity into scalable systems and products.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/favicon-256.png",
+  },
   openGraph: {
     title: "Foundy Works",
     description: "Find the Why. Build What Matters.",
