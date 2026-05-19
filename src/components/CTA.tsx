@@ -23,7 +23,9 @@ export function CTA() {
             Chat on WhatsApp
           </a>
           <a
-            href="#"
+            href="https://strategy.foundy.works"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-foundy-purple text-white font-medium text-base rounded-lg hover:bg-foundy-purple-light transition-colors"
           >
             Work With Foundy Strategy

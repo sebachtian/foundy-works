@@ -4,7 +4,7 @@ const OFFERINGS = [
     description:
       "Foundy Strategy defines problems, direction, and systems before execution.",
     linkText: "Learn more",
-    href: "#",
+    href: "https://strategy.foundy.works",
     icon: "consulting",
   },
   {
