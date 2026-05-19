@@ -63,10 +63,15 @@ function EcoIcon({ type }: { type: string }) {
     ),
     games: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect x="6" y="7" width="16" height="11" rx="3" stroke="#6B46C1" strokeWidth="2" />
-        <path d="M12 15V19M8 17H16" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="20" cy="14" r="1.5" fill="#6B46C1" />
-        <circle cx="21" cy="17" r="1.5" fill="#6B46C1" />
+        {/* Controller body */}
+        <path d="M4 11C4 8.79086 5.79086 7 8 7H20C22.2091 7 24 8.79086 24 11V17C24 19.2091 22.2091 21 20 21H8C5.79086 21 4 19.2091 4 17V11Z" stroke="#6B46C1" strokeWidth="2" />
+        {/* D-pad vertical */}
+        <line x1="10" y1="12" x2="10" y2="18" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
+        {/* D-pad horizontal */}
+        <line x1="7" y1="15" x2="13" y2="15" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
+        {/* Right buttons */}
+        <circle cx="18" cy="13" r="1.5" fill="#6B46C1" />
+        <circle cx="20" cy="16" r="1.5" fill="#6B46C1" />
       </svg>
     ),
     mobile: (
