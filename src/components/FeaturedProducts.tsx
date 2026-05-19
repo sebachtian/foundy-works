@@ -1,33 +1,56 @@
 const FEATURED = [
   {
     name: "MedCore",
-    tag: "Healthcare",
-    tagColor: "bg-purple-50 text-foundy-purple",
+    title: "Foundy MedCore",
     description:
-      "Clinic and hospital management with BPJS integration. Built for Indonesian healthcare providers that need reliability, compliance, and scale.",
+      "Comprehensive hospital and clinic management system with BPJS and Satu Sehat integration.",
+    icon: "medcore",
     href: "#",
   },
   {
     name: "Mirai-e",
-    tag: "Smart Living",
-    tagColor: "bg-emerald-50 text-emerald-700",
+    title: "Foundy Mirai-e",
     description:
-      "Future-ready home and lifestyle systems that adapt to how you live and work. Automation, energy management, and intelligent environments.",
+      "Smart home ecosystem that brings convenience, security, and efficiency to your home.",
+    icon: "home",
     href: "#",
   },
   {
     name: "LifeOS",
-    tag: "Productivity",
-    tagColor: "bg-blue-50 text-blue-700",
+    title: "Foundy LifeOS",
     description:
-      "Systems for tracking habits, budget, goals, and personal growth across every dimension of life. Your operating system for a better life.",
+      "All-in-one life companion for planning, habits, budgeting, and better daily decisions.",
+    icon: "lifeos",
     href: "#",
   },
 ];
 
+function FeaturedIcon({ type }: { type: string }) {
+  const icons: Record<string, React.ReactNode> = {
+    medcore: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 9V23M9 16H23" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
+        <rect x="4" y="4" width="24" height="24" rx="6" stroke="#6B46C1" strokeWidth="2" />
+      </svg>
+    ),
+    home: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M5 14L16 4L27 14V27H20V19H12V27H5V14Z" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    lifeos: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="#6B46C1" strokeWidth="2" />
+        <path d="M16 10V16L20 20" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  };
+  return icons[type] || null;
+}
+
 export function FeaturedProducts() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-white border-t border-foundy-border">
       <div className="container">
         {/* Section label */}
         <div className="inline-flex items-center gap-2.5 mb-6">
@@ -37,14 +60,6 @@ export function FeaturedProducts() {
           </span>
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foundy-heading mb-4">
-          What We&apos;re Building
-        </h2>
-        <p className="text-foundy-body text-lg leading-relaxed max-w-2xl mb-12">
-          Flagship products that demonstrate our approach — purposeful design,
-          scalable architecture, and real-world impact.
-        </p>
-
         {/* Three-column grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {FEATURED.map((product) => (
@@ -53,23 +68,21 @@ export function FeaturedProducts() {
               href={product.href}
               className="group rounded-xl border border-foundy-border bg-white p-6 shadow-sm hover:border-foundy-purple/30 hover:shadow-md transition-all flex flex-col"
             >
-              {/* Category badge */}
-              <span
-                className={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold uppercase tracking-wider w-fit ${product.tagColor}`}
-              >
-                {product.tag}
-              </span>
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-xl border-2 border-foundy-purple/20 flex items-center justify-center mb-4 group-hover:border-foundy-purple/40 transition-colors">
+                <FeaturedIcon type={product.icon} />
+              </div>
 
-              <h3 className="mt-4 text-2xl font-bold text-foundy-heading group-hover:text-foundy-purple transition-colors">
-                Foundy {product.name}
+              <h3 className="text-2xl font-bold text-foundy-heading group-hover:text-foundy-purple transition-colors">
+                {product.title}
               </h3>
               <p className="mt-3 text-foundy-body leading-relaxed flex-1">
                 {product.description}
               </p>
-              <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foundy-purple group-hover:gap-2.5 transition-all">
+              <div className="mt-6 inline-flex items-center gap-1.5 text-base font-medium text-foundy-purple group-hover:gap-2.5 transition-all">
                 Learn more
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M4 4V10M4 4H10M4 4L10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </a>

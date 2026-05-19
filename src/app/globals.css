@@ -3,10 +3,10 @@
 @theme {
   --color-foundy-purple: #6B46C1;
   --color-foundy-purple-light: #7C5CD1;
-  --color-foundy-heading: #1A1A1A;
-  --color-foundy-body: #4A4A4A;
-  --color-foundy-border: #E0E0E0;
-  --color-foundy-dark: #1A1A1A;
+  --color-foundy-heading: #1A202C;
+  --color-foundy-body: #4A5568;
+  --color-foundy-border: #E2E8F0;
+  --color-foundy-dark: #1A202C;
   --color-foundy-bg: #FFFFFF;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }

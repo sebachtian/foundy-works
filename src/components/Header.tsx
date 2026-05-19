@@ -18,7 +18,7 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-foundy-border">
       <div className="container flex items-center justify-between h-16 md:h-18">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
+        <Link href="/" className="flex items-center shrink-0">
           <FoundyLogo />
         </Link>
 
@@ -29,11 +29,11 @@ export function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-foundy-body hover:text-foundy-heading transition-colors inline-flex items-center gap-1"
+                className="text-base font-medium text-foundy-heading hover:text-foundy-purple transition-colors inline-flex items-center gap-1"
               >
                 {item.label}
                 {item.hasDropdown && (
-                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className="text-foundy-body">
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
                     <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 )}
@@ -42,11 +42,11 @@ export function Header() {
           </nav>
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-foundy-dark text-white text-sm font-medium rounded-lg hover:bg-foundy-dark/90 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-base font-medium rounded-lg hover:bg-black/85 transition-colors"
           >
             Contact Us
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M2.5 2.5V11.5M2.5 2.5H11.5M2.5 2.5L11.5 11.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
         </div>
@@ -57,15 +57,9 @@ export function Header() {
           className="md:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
         >
-          <span
-            className={`block w-5 h-0.5 bg-foundy-heading transition-transform ${open ? "rotate-45 translate-y-2" : ""}`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-foundy-heading transition-opacity ${open ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-foundy-heading transition-transform ${open ? "-rotate-45 -translate-y-2" : ""}`}
-          />
+          <span className={`block w-5 h-0.5 bg-foundy-heading transition-transform ${open ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-5 h-0.5 bg-foundy-heading transition-opacity ${open ? "opacity-0" : ""}`} />
+          <span className={`block w-5 h-0.5 bg-foundy-heading transition-transform ${open ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
@@ -78,24 +72,19 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium text-foundy-body hover:text-foundy-heading transition-colors inline-flex items-center gap-1"
+                className="text-base font-medium text-foundy-heading hover:text-foundy-purple transition-colors"
               >
                 {item.label}
-                {item.hasDropdown && (
-                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
               </Link>
             ))}
             <Link
               href="#contact"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-foundy-dark text-white text-sm font-medium rounded-lg hover:bg-foundy-dark/90 transition-colors mt-2"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-black text-white text-base font-medium rounded-lg hover:bg-black/85 transition-colors mt-2"
             >
               Contact Us
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2.5 2.5V11.5M2.5 2.5H11.5M2.5 2.5L11.5 11.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
           </nav>
@@ -107,20 +96,24 @@ export function Header() {
 
 export function FoundyLogo({ className }: { className?: string }) {
   return (
-    <div className={`flex items-end gap-1 ${className ?? ""}`}>
-      {/* Purple arrow/chevron icon */}
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
-        <rect x="2" y="4" width="16" height="14" rx="3" stroke="#6B46C1" strokeWidth="2" />
-        <path d="M14 2L20 8M20 8L14 14" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      <div className="flex flex-col leading-none">
-        <span className="text-lg font-bold tracking-tight text-foundy-heading">
+    <div className={`flex flex-col ${className ?? ""}`}>
+      {/* Top row: Foundy + icon + line */}
+      <div className="flex items-end gap-0.5">
+        <span className="text-xl font-bold tracking-tight text-foundy-heading leading-none">
           Foundy
         </span>
-        <span className="text-[10px] font-medium text-foundy-body tracking-wide">
-          foundy.works
-        </span>
+        {/* Arrow/chevron icon to the right of Foundy */}
+        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" className="shrink-0 -ml-0.5 mb-0.5">
+          <path d="M2 2L10 8L2 14" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M8 2L16 8L8 14" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.4" />
+        </svg>
+        {/* Horizontal line extending right */}
+        <div className="h-px bg-foundy-heading flex-1 min-w-[40px] self-end mb-1.5 ml-1" />
       </div>
+      {/* Bottom: works */}
+      <span className="text-[11px] font-medium text-foundy-heading tracking-wide leading-none mt-0.5">
+        works
+      </span>
     </div>
   );
 }

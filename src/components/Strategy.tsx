@@ -2,16 +2,18 @@ const OFFERINGS = [
   {
     title: "Consulting",
     description:
-      "We start with the question that matters most — why. Our strategy consulting helps you map the landscape, identify what truly matters, and design systems that align with your purpose before a single line of code is written.",
+      "Foundy Strategy defines problems, direction, and systems before execution.",
+    linkText: "Learn more",
     href: "#",
     icon: "consulting",
   },
   {
-    title: "Foundy MedCore",
+    title: "Products",
     description:
-      "Healthcare systems for hospitals and clinics, integrated with BPJS and modern record-keeping. Built for Indonesian healthcare infrastructure that needs reliability, compliance, and scale.",
-    href: "#",
-    icon: "healthcare",
+      "Foundy builds scalable platforms across industries, from healthcare to smart living and AI experiences.",
+    linkText: "Explore products",
+    href: "#products",
+    icon: "products",
   },
 ];
 
@@ -28,49 +30,30 @@ function SectionLabel({ text }: { text: string }) {
 
 function IconConsulting() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-      <path
-        d="M5 23V11L14 4L23 11V23H18V16H10V23H5Z"
-        stroke="#6B46C1"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      {/* Two person silhouettes */}
+      <circle cx="12" cy="10" r="4" stroke="#6B46C1" strokeWidth="2" />
+      <path d="M4 28C4 22.4772 7.58172 18 12 18C16.4183 18 20 22.4772 20 28" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="24" cy="12" r="3" stroke="#6B46C1" strokeWidth="2" />
+      <path d="M19 28C19 24.134 22.134 21 26 21C27.6569 21 28 21 28 21" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
 
-function IconHealthcare() {
+function IconProducts() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-      <path
-        d="M12 12H16M14 10V18"
-        stroke="#6B46C1"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <rect
-        x="3"
-        y="3"
-        width="22"
-        height="22"
-        rx="5"
-        stroke="#6B46C1"
-        strokeWidth="2"
-      />
-      <path
-        d="M10 21H18"
-        stroke="#6B46C1"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      {/* 3D cube/box */}
+      <path d="M4 9L16 3L28 9L16 15L4 9Z" stroke="#6B46C1" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M4 9V23L16 29L28 23V9" stroke="#6B46C1" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M16 15V29" stroke="#6B46C1" strokeWidth="2" />
     </svg>
   );
 }
 
 const icons: Record<string, React.ReactNode> = {
   consulting: <IconConsulting />,
-  healthcare: <IconHealthcare />,
+  products: <IconProducts />,
 };
 
 export function Strategy() {
@@ -78,17 +61,6 @@ export function Strategy() {
     <section id="strategy" className="py-20 md:py-28 bg-white">
       <div className="container">
         <SectionLabel text="What Foundy Is" />
-
-        <div className="max-w-2xl mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foundy-heading">
-            From Why to System
-          </h2>
-          <p className="mt-4 text-foundy-body text-lg leading-relaxed">
-            We don&apos;t just build. We start with the question that matters most
-            &mdash; <em>why</em>. Every product, every system, every decision flows
-            from that foundation.
-          </p>
-        </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {OFFERINGS.map((item) => (
@@ -108,10 +80,10 @@ export function Strategy() {
               <p className="mt-3 text-foundy-body leading-relaxed">
                 {item.description}
               </p>
-              <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foundy-purple group-hover:gap-2.5 transition-all">
-                Learn more
+              <div className="mt-6 inline-flex items-center gap-1.5 text-base font-medium text-foundy-purple group-hover:gap-2.5 transition-all">
+                {item.linkText}
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M4 4V10M4 4H10M4 4L10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </a>

@@ -23,25 +23,21 @@ export function Hero() {
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-foundy-purple text-white font-medium text-base rounded-lg hover:bg-foundy-purple-light transition-colors"
               >
                 Explore Foundy
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M1 8H15M15 8L9 2M15 8L9 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <ArrowUpRight />
               </a>
               <a
                 href="#products"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-foundy-border text-foundy-heading font-medium text-base rounded-lg hover:bg-gray-50 transition-colors"
               >
                 View Products
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M1 8H15M15 8L9 2M15 8L9 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <ArrowUpRight />
               </a>
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Abstract Strategy Graphic */}
+          {/* RIGHT COLUMN - Abstract Graphic */}
           <div className="flex justify-center md:justify-end">
-            <AbstractStrategyGraphic />
+            <HeroGraphic />
           </div>
         </div>
       </div>
@@ -49,114 +45,43 @@ export function Hero() {
   );
 }
 
-function AbstractStrategyGraphic() {
+function ArrowUpRight() {
   return (
-    <div className="relative w-full max-w-[480px] aspect-square">
-      <svg
-        viewBox="0 0 480 480"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full"
-      >
-        {/* Central circle */}
-        <circle cx="240" cy="240" r="56" stroke="#6B46C1" strokeWidth="3" />
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M4.5 4.5V11.5M4.5 4.5H11.5M4.5 4.5L11.5 11.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
-        {/* Inner arrow in central circle */}
-        <path
-          d="M230 230L250 240L230 250"
-          stroke="#6B46C1"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+function HeroGraphic() {
+  return (
+    <div className="relative w-full max-w-[440px] aspect-square">
+      <svg viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        {/* Central dashed circle */}
+        <circle cx="200" cy="220" r="70" stroke="#6B46C1" strokeWidth="2" strokeDasharray="6 6" />
 
-        {/* Concentric dashed rings */}
-        <circle
-          cx="240"
-          cy="240"
-          r="100"
-          stroke="#6B46C1"
-          strokeWidth="1.5"
-          strokeDasharray="8 6"
-          opacity="0.5"
-        />
-        <circle
-          cx="240"
-          cy="240"
-          r="150"
-          stroke="#6B46C1"
-          strokeWidth="1.2"
-          strokeDasharray="6 8"
-          opacity="0.3"
-        />
-        <circle
-          cx="240"
-          cy="240"
-          r="200"
-          stroke="#E0E0E0"
-          strokeWidth="1"
-          strokeDasharray="4 10"
-          opacity="0.4"
-        />
+        {/* Arrow inside central circle */}
+        <path d="M180 230L200 210L220 230" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M200 210V250" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" />
 
-        {/* Flowing curved lines - purple */}
-        <path
-          d="M120 100C140 160, 100 200, 160 240C200 265, 180 300, 140 340"
-          stroke="#6B46C1"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M360 140C340 190, 380 220, 320 240C280 255, 300 290, 340 320"
-          stroke="#6B46C1"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          opacity="0.8"
-        />
+        {/* Purple curved line top-right - with arrow and dot */}
+        <circle cx="280" cy="140" r="4" fill="#6B46C1" />
+        <path d="M280 140C300 160, 320 170, 330 180" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" />
+        {/* Arrowhead at end */}
+        <path d="M325 175L333 183L336 174" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#6B46C1" />
 
-        {/* Flowing curved lines - light gray */}
-        <path
-          d="M100 320C140 350, 120 380, 160 400"
-          stroke="#E0E0E0"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M380 100C340 140, 360 170, 320 200"
-          stroke="#E0E0E0"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+        {/* Gray curved line 1 - middle right */}
+        <path d="M300 240C330 250, 350 260, 360 270" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
+        <path d="M355 265L363 273L366 264" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#E2E8F0" />
 
-        {/* Abstract flowing shapes */}
-        <path
-          d="M80 160C100 130, 120 140, 130 170C140 200, 120 210, 100 200C80 190, 70 180, 80 160Z"
-          stroke="#6B46C1"
-          strokeWidth="2"
-          opacity="0.6"
-        />
-        <path
-          d="M370 300C390 270, 410 280, 400 310C390 340, 370 330, 370 300Z"
-          stroke="#6B46C1"
-          strokeWidth="2"
-          opacity="0.6"
-        />
+        {/* Gray curved line 2 - bottom right */}
+        <path d="M280 320C310 330, 330 340, 340 350" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
+        <path d="M335 345L343 353L346 344" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#E2E8F0" />
 
-        {/* Small geometric accent marks */}
-        <rect x="100" y="80" width="8" height="8" rx="2" fill="#6B46C1" opacity="0.5" />
-        <rect x="360" y="380" width="8" height="8" rx="2" fill="#6B46C1" opacity="0.5" />
-        <rect x="380" y="80" width="6" height="6" rx="1.5" fill="#E0E0E0" />
-        <rect x="90" y="380" width="6" height="6" rx="1.5" fill="#E0E0E0" />
-
-        {/* Nodes on paths */}
-        <circle cx="140" cy="340" r="5" fill="#6B46C1" />
-        <circle cx="320" cy="200" r="5" fill="#6B46C1" opacity="0.7" />
-        <circle cx="100" cy="200" r="4" fill="#E0E0E0" />
-        <circle cx="370" cy="300" r="4" fill="#E0E0E0" />
-
-        {/* Connecting thin lines */}
-        <line x1="140" y1="340" x2="180" y2="290" stroke="#E0E0E0" strokeWidth="1" strokeDasharray="4 4" />
-        <line x1="320" y1="200" x2="280" y2="250" stroke="#E0E0E0" strokeWidth="1" strokeDasharray="4 4" />
+        {/* Small decorative dots */}
+        <circle cx="130" cy="120" r="3" fill="#E2E8F0" />
+        <circle cx="350" cy="100" r="3" fill="#E2E8F0" />
+        <circle cx="130" cy="340" r="3" fill="#E2E8F0" />
       </svg>
     </div>
   );
