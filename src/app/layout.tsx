@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Foundy helps organizations and individuals define what should be built and why, then turns that clarity into scalable systems and products.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
     apple: "/favicon-256.png",
   },
   openGraph: {

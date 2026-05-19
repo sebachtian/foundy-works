@@ -35,9 +35,9 @@ export function Hero() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Network Graphic */}
+          {/* RIGHT COLUMN - Process Flow Graphic */}
           <div className="flex justify-center md:justify-end">
-            <NetworkGraphic />
+            <ProcessFlowGraphic />
           </div>
         </div>
       </div>
@@ -53,69 +53,43 @@ function ArrowUpRight() {
   );
 }
 
-function NetworkGraphic() {
+function ProcessFlowGraphic() {
   return (
     <div className="relative w-full max-w-[460px] aspect-square">
       <svg viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        {/* === FLOWING CURVED PATHS === */}
-        {/* Main flowing path from upper-left to center */}
-        <path d="M60 80C120 60, 180 120, 200 180C210 210, 200 230, 210 250C220 270, 240 260, 250 240" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
-        <polygon points="247,246 255,240 252,234" fill="#6B46C1" opacity="0.7" />
+        {/* === SOURCE LINE (from left to center) === */}
+        <line x1="40" y1="230" x2="185" y2="230" stroke="#6B46C1" strokeWidth="2.5" strokeLinecap="round" />
+        {/* Arrowhead on source line */}
+        <polygon points="175,225 190,230 175,235" fill="#6B46C1" />
 
-        {/* Path from center branching right and down */}
-        <path d="M250 240C280 230, 310 250, 340 280C360 300, 370 330, 380 360" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
-        <polygon points="376,358 384,364 382,355" fill="#6B46C1" opacity="0.6" />
+        {/* === CENTER PROCESS LOGO (circle inside circle, grey) === */}
+        <circle cx="230" cy="230" r="50" stroke="#E2E8F0" strokeWidth="3" />
+        <circle cx="230" cy="230" r="32" stroke="#E2E8F0" strokeWidth="2.5" />
+        {/* Inner dot */}
+        <circle cx="230" cy="230" r="6" fill="#6B46C1" />
 
-        {/* Path branching left from center */}
-        <path d="M210 250C180 260, 150 290, 130 320C115 343, 120 370, 130 390" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
-        <polygon points="126,386 130,394 134,387" fill="#E2E8F0" />
+        {/* === BRANCH 1 (top-right, HIGHLIGHTED - purple) === */}
+        <line x1="275" y1="200" x2="390" y2="120" stroke="#6B46C1" strokeWidth="3" strokeLinecap="round" />
+        <polygon points="380,128 392,118 384,112" fill="#6B46C1" />
+        {/* Node at end */}
+        <circle cx="392" cy="118" r="7" fill="#6B46C1" />
+        {/* Highlight glow ring */}
+        <circle cx="392" cy="118" r="14" stroke="#6B46C1" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.4" />
 
-        {/* Upper sweeping arc */}
-        <path d="M200 180C140 130, 90 100, 60 120" stroke="#6B46C1" strokeWidth="1.8" strokeDasharray="5 4" strokeLinecap="round" opacity="0.5" />
-        <polygon points="64,116 56,118 62,124" fill="#6B46C1" opacity="0.5" />
+        {/* === BRANCH 2 (middle-right, dimmed) === */}
+        <line x1="280" y1="230" x2="400" y2="230" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="388,225 402,230 388,235" fill="#E2E8F0" />
+        <circle cx="402" cy="230" r="5" fill="#E2E8F0" />
 
-        {/* Lower sweeping arc */}
-        <path d="M130 320C100 340, 80 370, 90 400" stroke="#E2E8F0" strokeWidth="1.8" strokeDasharray="5 4" strokeLinecap="round" opacity="0.6" />
-        <polygon points="86,396 92,404 94,396" fill="#E2E8F0" opacity="0.6" />
+        {/* === BRANCH 3 (bottom-right, dimmed) === */}
+        <line x1="275" y1="260" x2="390" y2="340" stroke="#E2E8F0" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="378,335 392,342 382,348" fill="#E2E8F0" />
+        <circle cx="392" cy="342" r="5" fill="#E2E8F0" />
 
-        {/* Right upward sweep */}
-        <path d="M340 280C350 240, 370 200, 390 180" stroke="#6B46C1" strokeWidth="1.8" strokeDasharray="5 4" strokeLinecap="round" opacity="0.5" />
-        <polygon points="386,184 394,178 392,176" fill="#6B46C1" opacity="0.5" />
-
-        {/* Secondary connecting line */}
-        <path d="M60 120C90 160, 120 180, 130 200C140 220, 130 240, 120 260" stroke="#E2E8F0" strokeWidth="1.5" strokeDasharray="3 5" strokeLinecap="round" opacity="0.5" />
-
-        {/* === CENTRAL HUB === */}
-        <circle cx="230" cy="240" r="55" stroke="#6B46C1" strokeWidth="2" strokeDasharray="6 5" />
-        <circle cx="230" cy="240" r="8" fill="#6B46C1" />
-        {/* Arrow inside hub */}
-        <path d="M222 245L230 232L238 245" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M230 232V252" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" />
-
-        {/* === CONCENTRIC RINGS === */}
-        <circle cx="230" cy="240" r="100" stroke="#6B46C1" strokeWidth="1" strokeDasharray="3 7" opacity="0.25" />
-        <circle cx="230" cy="240" r="145" stroke="#6B46C1" strokeWidth="0.8" strokeDasharray="2 10" opacity="0.15" />
-
-        {/* === NODES === */}
-        <circle cx="60" cy="80" r="6" fill="#6B46C1" />
-        <circle cx="60" cy="120" r="4" fill="#6B46C1" opacity="0.7" />
-        <circle cx="130" cy="200" r="5" fill="#6B46C1" />
-        <circle cx="120" cy="260" r="4" fill="#6B46C1" opacity="0.6" />
-        <circle cx="130" cy="390" r="5" fill="#6B46C1" opacity="0.5" />
-        <circle cx="90" cy="400" r="4" fill="#E2E8F0" />
-        <circle cx="380" cy="180" r="5" fill="#6B46C1" opacity="0.6" />
-        <circle cx="340" cy="280" r="5" fill="#6B46C1" opacity="0.7" />
-        <circle cx="380" cy="360" r="6" fill="#6B46C1" />
-
-        {/* Decorative small dots */}
-        <circle cx="100" cy="100" r="2.5" fill="#E2E8F0" />
-        <circle cx="170" cy="150" r="2" fill="#E2E8F0" />
-        <circle cx="300" cy="180" r="2.5" fill="#E2E8F0" />
-        <circle cx="350" cy="310" r="2" fill="#E2E8F0" />
-        <circle cx="180" cy="340" r="2.5" fill="#E2E8F0" />
-        <circle cx="280" cy="370" r="2" fill="#E2E8F0" />
-        <circle cx="150" cy="300" r="2" fill="#E2E8F0" />
-        <circle cx="310" cy="200" r="2" fill="#E2E8F0" />
+        {/* === DECORATIVE DOTS === */}
+        <circle cx="100" cy="150" r="2.5" fill="#E2E8F0" />
+        <circle cx="160" cy="320" r="2.5" fill="#E2E8F0" />
+        <circle cx="340" cy="380" r="2" fill="#E2E8F0" />
       </svg>
     </div>
   );
