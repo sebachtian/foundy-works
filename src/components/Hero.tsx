@@ -57,41 +57,42 @@ function HeroGraphic() {
   return (
     <div className="relative w-full max-w-[460px] aspect-[656/492]">
       <svg viewBox="0 0 656 492" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+          <style>{`
+            .p { stroke: #7C4DFF; stroke-width: 4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+            .g { stroke: #D6D6D6; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+            .f { stroke: #EFEFEF; stroke-width: 2; fill: none; }
+          `}</style>
+        </defs>
         {/* Background circles */}
-        <circle cx="280" cy="240" r="120" stroke="#EFEFEF" strokeWidth="2" fill="none" />
-        <circle cx="280" cy="240" r="70" stroke="#EFEFEF" strokeWidth="2" fill="none" />
+        <circle cx="280" cy="240" r="120" className="f" />
+        <circle cx="280" cy="240" r="70" className="f" />
 
         {/* Gray lines */}
-        <line x1="335" y1="240" x2="625" y2="240" stroke="#D6D6D6" strokeWidth="3" strokeLinecap="round" />
-        <polyline points="610,225 625,240 610,255" stroke="#D6D6D6" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="335" y1="240" x2="625" y2="240" className="g" />
+        <polyline points="610,225 625,240 610,255" className="g" />
 
-        <path
-          d="M 335 240 C 360 240, 370 240, 390 260 L 500 370 C 515 385, 525 400, 540 400 L 620 400"
-          stroke="#D6D6D6" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"
-        />
-        <polyline points="605,385 625,400 605,415" stroke="#D6D6D6" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M 335 240 C 360 240, 370 240, 390 260 L 500 370 C 515 385, 525 400, 540 400 L 620 400" className="g" />
+        <polyline points="605,385 625,400 605,415" className="g" />
 
         {/* Purple incoming line */}
-        <line x1="40" y1="240" x2="225" y2="240" stroke="#7C4DFF" strokeWidth="4" strokeLinecap="round" />
+        <line x1="40" y1="240" x2="225" y2="240" className="p" />
 
         {/* Left dot */}
         <circle cx="40" cy="240" r="8" fill="#7C4DFF" />
 
         {/* Center circle */}
-        <circle cx="280" cy="240" r="55" stroke="#7C4DFF" strokeWidth="4" fill="none" />
+        <circle cx="280" cy="240" r="55" className="p" />
 
         {/* Inner arrow */}
-        <line x1="255" y1="240" x2="292" y2="240" stroke="#7C4DFF" strokeWidth="4" strokeLinecap="round" />
-        <polyline points="278,226 292,240 278,254" stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="255" y1="240" x2="292" y2="240" className="p" />
+        <polyline points="278,226 292,240 278,254" className="p" />
 
         {/* Outer purple path */}
-        <path
-          d="M 335 240 C 360 240, 370 240, 390 220 L 500 110 C 515 95, 525 80, 540 80 L 620 80"
-          stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round"
-        />
+        <path d="M 335 240 C 360 240, 370 240, 390 220 L 500 110 C 515 95, 525 80, 540 80 L 620 80" className="p" />
 
         {/* Top arrow */}
-        <polyline points="605,65 625,80 605,95" stroke="#7C4DFF" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points="605,65 625,80 605,95" className="p" />
       </svg>
     </div>
   );
